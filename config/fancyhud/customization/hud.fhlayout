@@ -1,0 +1,76 @@
+type = hud
+
+customization-meta {
+  renderorder = foreground
+}
+
+customization {
+  visible = false
+  action = editcrosshair
+}
+
+customization {
+  x = -1
+  action = editselecteditemname
+}
+
+customization {
+  orientation = bottom-right
+  shadow = false
+  x = -1
+  action = addtext
+  actionid = 3004b15e-9afa-46c4-a15a-8f43dc82681a1629690700008
+  y = -1
+  scale = 1.0
+  alignment = left
+  value = %fps% FPS, %tps% TPS
+}
+
+customization {
+  path = config/fancyhud/resources/crosshair_m.png
+  orientation = mid-centered
+  x = 0
+  width = 100
+  action = addtexture
+  actionid = 56803b07-f2b1-47d8-a70b-a03dcc998c741630124242660
+  y = 0
+  vr:showif:playerisrunning = true
+  height = 100
+}
+
+customization {
+  orientation = bottom-right
+  shadow = false
+  x = -1
+  action = addtext
+  actionid = ffd1cb37-b480-4e8d-b9d0-656dd663b75f1629690725820
+  y = -12
+  scale = 1.0
+  alignment = left
+  value = %usedram%/%maxram% mb
+}
+
+customization {
+  path = config/fancyhud/resources/crosshair_s.png
+  orientation = mid-centered
+  x = 0
+  width = 50
+  action = addtexture
+  actionid = b3f993a5-5134-4a2d-930b-c78e34eb54381630124068378
+  y = 0
+  vr:showif:playerisrunning = false
+  height = 50
+}
+
+customization {
+  orientation = bottom-right
+  shadow = false
+  x = -2
+  action = addtext
+  actionid = e5a193f7-ad0b-4ad2-97c0-e8403231bb0f1630207621394
+  y = -23
+  scale = 1.0
+  alignment = left
+  value = %mhitemcurdurab%/%mhitemmaxdurab%
+}
+

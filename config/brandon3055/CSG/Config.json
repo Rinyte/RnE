@@ -1,0 +1,7 @@
+{
+  "inventory": {
+    "0:0": "{id:\"timeless_and_classic:glock_17\",Count:1b,tag:{AmmoCount:16}}",
+    "0:1": "{id:\"timeless_and_classic:9mm_box_block\",Count:2b}"
+  },
+  "wipeBlacklist": []
+}

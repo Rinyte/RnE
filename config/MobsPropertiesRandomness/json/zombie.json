@@ -1,0 +1,31 @@
+{
+    "mob_id": "minecraft:zombie",
+    "equipment": {
+        "hand": {
+            "chance": {
+                "amount": 100
+            },
+            "items": [
+                {
+                    "id": "minecraft:iron_pickaxe",
+                    "weight": 7
+                },
+                {
+                    "id": "minecraft:diamond_pickaxe",
+                    "weight": 3
+                }
+            ]
+        }
+    },
+	"attributes": [
+		{
+			"id": "zombie.spawn_reinforcements",
+			"modifier": {
+				"min": 30
+				"max": 45
+			},
+			"is_flat": false,
+			"affected_by_difficulty": false
+		}
+	]
+}

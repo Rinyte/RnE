@@ -1,0 +1,107 @@
+
+#General Configuration for Generic Ecosphere
+[commmon]
+
+	#If this option is set to false, all hills sub-biomes will not generate, default value is true (Requires restart)
+	[commmon.hills_biomes]
+		"Should Hills Sub-Biomes Spawn" = true
+
+	#If this option is set to false, all ocean replacing biomes will not generate, default value is true (Requires restart)
+	[commmon.island_biomes]
+		"Should Island Biomes Spawn" = true
+
+	#If this option is set to false, Generic Ecosphere will not enhance vanilla biomes, default value is true (Requires restart)
+	[commmon.vanilla_biome_features]
+		"Should this mod improve Vanilla Biomes?" = true
+
+	#If this option is set to false, all beach and rivers biomes will not generate (Does not effect vanilla biomes, as this config will determine if custom beach biomes will generate), default value is true (Requires restart)
+	[commmon.beach_and_river_biomes]
+		"Should Beach and River biomes spawn" = true
+
+	#Main Biome Weights, zero means the biome will not generate; note that disabling certain biomes will cause some their sub-biomes to not generate... (Requires restart)
+	[commmon.biome_weights]
+		"Overgrown Cliffs Weight" = 1
+		"Tropical Rainforest Weight" = 1
+		"Great Lakes Weight" = 7
+		"Lavender Fields Weight" = 5
+		"Temperate Rainforest Weight" = 2
+		"Scrubland Weight" = 9
+		"Dying Swamp Weight" = 1
+		"Sequoia Valley Weight" = 1
+		"Sinister Forest Weight" = 1
+		"Coniferous Forest Weight" = 7
+		"Rainforest Weight" = 1
+		"Robinia Woodland Weight" = 4
+		"Holly Forest Weight" = 7
+		"Grassland Weight" = 29
+		"Chaparral Weight" = 5
+		"Mystical Valley Weight" = 1
+		"Boreal Forest Weight" = 5
+		"Eucalyptus Forest Weight" = 1
+		"Lush Swamp Weight" = 3
+		"Aspen Forest Weight" = 5
+		"Needle Forest Weight" = 2
+		"Tundra Weight" = 5
+		"Cold Desert Weight" = 1
+		"Appalachian Mountains Weight" = 5
+		"Redwood Forest Weight" = 1
+		"Elm Forest Weight" = 5
+		"Beech Woods Weight" = 5
+		"Cherry Blossom Forest Weight" = 1
+		"Oak Woodland Weight" = 9
+		"Maple Forest Weight" = 7
+		"Steppe Weight" = 3
+		"Crag Weight" = 1
+		"Shield Weight" = 6
+		"Snowy Forest Weight" = 3
+		"Alder Forest Weight" = 6
+		"Snowy Coniferous Forest Weight" = 3
+		"Rosewood Weight" = 1
+		"Fen Weight" = 4
+		"Flowering Fields Weight" = 4
+		"Larch Taiga Weight" = 5
+		"Heathland Weight" = 3
+		"Linden Forest Weight" = 5
+		"Marsh Weight" = 5
+		"Maple Taiga Weight" = 7
+		"Outback Weight" = 2
+		"Alps Weight" = 5
+		"Mangrove Marsh Weight" = 1
+		"Thicket Weight" = 4
+		"Magnolia Grove Weight" = 1
+		"Brushland Weight" = 2
+		"Fir Forest Weight" = 5
+		"Mountain Weight" = 4
+		"Pine Taiga Weight" = 6
+		"Xeric Shrubland Weight" = 4
+		"Poplar Grove Weight" = 5
+		"Highland Weight" = 4
+		"Ash Forest Weight" = 5
+		"Moor Weight" = 3
+		"Seasonal Forest Weight" = 5
+		"Bayou Weight" = 4
+		"Yew Woods Weight" = 5
+		"Jacaranda Grove Weight" = 3
+		"Rainbow Eucalyptus Forest Weight" = 1
+		"Quagmire Weight" = 1
+		"Prairie Weight" = 15
+		"Lush Desert Weight" = 1
+		"Apple Orchard Weight" = 5
+		"Cedar Forest Weight" = 5
+		"Bog Weight" = 3
+		"Ebony Forest Weight" = 1
+		"Lush Savanna Weight" = 2
+		"Evergreen Forest Weight" = 5
+		"Kapok Jungle Weight" = 1
+		"Cypress Grove Weight" = 5
+		"Dying Forest Weight" = 2
+		"Douglas Forest Weight" = 5
+		"Meadow Weight" = 10
+		"Plane Forest Weight" = 5
+		"Mahogany Forest Weight" = 1
+		"Shrubland Weight" = 20
+
+	#If this option is set to false, all of the other sub-biomes will not generate, default value is true (Requires restart)
+	[commmon.sub_biomes]
+		"Should Sub-Biomes Spawn" = true
+

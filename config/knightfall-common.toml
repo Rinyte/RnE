@@ -1,0 +1,73 @@
+
+#Armor
+["Armor Slot Multipliers"]
+	#The default 'weight' assigned to leg armor, relative to all other armor slots. 
+	#Default: .75
+	legSlotMultiplier = 0.75
+	#The default 'weight' assigned to head armor, relative to all other armor slots. 
+	#Default: .4
+	headSlotMultiplier = 0.4
+	#The default 'weight' assigned to chest armor, relative to all other armor slots. 
+	#Default: 0.9
+	chestSlotMultiplier = 0.9
+	#The default 'weight' assigned to boots and shoes, relative to all other armor slots. 
+	#Default: .4
+	footSlotMultiplier = 0.4
+
+["Armor Weight Class Multipliers"]
+	#How heavy are light armor classes relative to others? 
+	#Default: 2.0
+	lightArmor = 2.0
+	#How heavy are heavy armor classes relative to others? 
+	#Default: 8.0
+	heavyArmor = 8.0
+	#How heavy are Very heavy armor classes relative to others? 
+	#Default: 11.0
+	veryHeavyArmor = 11.0
+	#How heavy are armor items from this extra tier relative to others? 
+	#Default: 0.0
+	extraArmor = 0.0
+	#How heavy are medium armor classes relative to others? 
+	#Default: 5.0
+	mediumArmor = 5.0
+
+[Mathemagic]
+	#The damage multiplier's bare minimum upon falling under normal circumstances. 
+	#Default: 1.0
+	baseFallCalcDmg = 1.0
+	#Check out the CurseForge page to see how you can reasonably configure the equations for fall damage.
+	#Alternatively, check out https://www.desmos.com/calculator/jadvkibh0k to tinker with the functions directly.
+	#Type can be 'QUADRATIC' (default) or 'LOGISTIC'.
+	damageCalculationType = "QUADRATIC"
+
+	[Mathemagic."Logistic Settings"]
+		#The slope of the curve. Higher the number, steeper the slope near the midpoint.
+		#Default: 0.25
+		logisticSlope = 0.25
+		#The general upper limit of the damage multiplier, approached at the highest armor weight classes.
+		#Default: 3.5
+		logisticUpperBound = 3.5
+		#The armor weight value at which the fall damage penalty increases the fastest.
+		#Default: 16.1
+		weightPenaltyMidpoint = 16.1
+
+	[Mathemagic."Quadratic Settings"]
+		#The rate at which heavier armors deal greater fall damage.
+		#Increase drastically at your own risk lol
+		quadraticGrowthRate = 0.0034
+
+[Miscellaneous]
+	#When activated, chat sends messages to players of their collective armor weight, 
+	#and the amount the vanilla damage has been multiplied by, according to the magic formula.
+	#This occurs whenever the player falls a small distance or greater.
+	debugModeEnabled = false
+	#Consider it a general multiplier for all base player fall damage. Default 1.0. 
+	#Setting to 0 eliminates all fall damage entirely.
+	genericFallDamageMultiplier = 1.0
+	#Consider it a general multiplier for all base fall damage for mobs that can wear armor,
+	#like zombies and skeletons. Default 1.0.
+	mobFallDamageMultiplier = 1.0
+	#Unlike the player, the horse follows a linear relationship between weight and fall damage.
+	#This is a simple multiplier determining the intensity of damage to the horse. Default: 0.5
+	horseDamageMultiplier = 0.5
+
