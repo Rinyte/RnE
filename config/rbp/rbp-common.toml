@@ -7,10 +7,10 @@
 	ApplyDefaultBlocksBlacklist = ["minecraft"]
 
 	#Whether dimensions without specified world definitions should be given one by default (helpful for applying physics to mod dimensions automatically).
-	ApplyDefaultWorlds = true
+	ApplyDefaultWorlds = false
 
 	#A list of dimension IDs which will be prevented from receiving a default world definition.
-	ApplyDefaultWorldsBlacklist = [-1]
+	ApplyDefaultWorldsBlacklist = []
 
 	[defaults.default_block]
 		#A reverse multiplier to apply to the vertical support mass of the block[s].
@@ -33,10 +33,10 @@
 		EntityDamage = 2.0
 
 		#Whether the block[s] should have a fake full-block collision box.
-		FakeFullBlock = true
+		FakeFullBlock = false
 
 		#Whether the block[s] should be allowed to float on water.
-		FloatsOnWater = true
+		FloatsOnWater = false
 
 		#Whether the block[s] should be allowed to horizontally attach to other blocks.
 		IsAttachable = true
@@ -98,7 +98,7 @@
 	#	2: Chunks will only update whenever the player interacts with a chunk.
 	#	3: Chunks will not update. (best performance)
 	#Range: 0 ~ 3
-	ChunkUpdateMode = 2
+	ChunkUpdateMode = 3
 
 	#The maximum distance, in chunks, where block physics are updated.
 	#	+ Raise this value to allow blocks to fall from further away.
