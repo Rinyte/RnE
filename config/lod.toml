@@ -1,168 +1,259 @@
 
-#Level of Detail configuration settings
 [client]
-	#
-	#
-	# This is multiplied by the default view distance 
-	# to determine how far out to generate/render LODs. 
-	# A value of 2 means that there is 1 render distance worth 
-	# of LODs in each cardinal direction. 
-	#
-	#Range: 2 ~ 16
-	lodChunkRadiusMultiplier = 4
-	#
-	#
-	# How detailed should the LODs be? 
-	# SINGLE: render 1 LOD for each Chunk. 
-	# DOUBLE: render 4 LODs for each Chunk. 
-	# QUAD: render 16 LODs for each Chunk. 
-	# HALF: render 64 LODs for each Chunk. 
-	#
-	#Allowed Values: SINGLE, DOUBLE, QUAD, HALF, FULL
-	lodGeometryQuality = "HALF"
-	#
-	#
-	# Change how bright LOD colors are. 
-	# 0 = black 
-	# 1 = normal color value 
-	# 2 = washed out colors 
-	#
-	#Range: 0.0 ~ 2.0
-	brightnessMultiplier = 1.0
-	#
-	#
-	# If false LODs will not be drawn, 
-	# however they will still be generated 
-	# and saved to file for later use. 
-	#
-	drawLODs = true
-	#
-	#
-	# When should fog be drawn? 
-	# USE_OPTIFINE_FOG_SETTING: Use whatever Fog setting Optifine is using. If Optifine isn't installed this defaults to ALWAYS_DRAW_FOG_FANCY. 
-	# NEVER_DRAW_FOG: Never draw fog on the LODs 
-	# ALWAYS_DRAW_FOG_FAST: Always draw fast fog on the LODs 
-	# ALWAYS_DRAW_FOG_FANCY: Always draw fancy fog on the LODs (if your graphics card supports it) 
-	#
-	#Allowed Values: USE_OPTIFINE_FOG_SETTING, NEVER_DRAW_FOG, ALWAYS_DRAW_FOG_FAST, ALWAYS_DRAW_FOG_FANCY
-	fogDrawOverride = "NEVER_DRAW_FOG"
-	#
-	#
-	# Note: The times listed here are the amount of time it took 
-	#       the developer's PC to generate 1 chunk, 
-	#       and are included so you can compare the 
-	#       different generation options. Your mileage may vary. 
-	#
-	# BIOME_ONLY 
-	# Only generate the biomes and use biome 
-	# grass/foliage color, water color, or snow color 
-	# to generate the color. 
-	# Doesn't generate height, everything is shown at sea level. 
-	# Multithreaded - Fastest (2-5 ms) 
-	#
-	# BIOME_ONLY_SIMULATE_HEIGHT 
-	# Same as BIOME_ONLY, except instead 
-	# of always using sea level as the LOD height 
-	# different biome types (mountain, ocean, forest, etc.) 
-	# use predetermined heights to simulate having height data. 
-	# Multithreaded - Fastest (2-5 ms) 
-	#
-	# SURFACE 
-	# Generate the world surface, 
-	# this does NOT include caves, trees, 
-	# or structures. 
-	# Multithreaded - Faster (10-20 ms) 
-	#
-	# FEATURES 
-	# Generate everything except structures. 
-	# WARNING: This may cause world generation bugs or instability! 
-	# Multithreaded - Fast (15-20 ms) 
-	#
-	# SERVER 
-	# Ask the server to generate/load each chunk. 
-	# This is the most compatible, but causes server/simulation lag. 
-	# This will also show player made structures if you 
-	# are adding the mod to a pre-existing world. 
-	# Singlethreaded - Slow (15-50 ms, with spikes up to 200 ms) 
-	#
-	#Allowed Values: BIOME_ONLY, BIOME_ONLY_SIMULATE_HEIGHT, SURFACE, FEATURES, SERVER
-	distanceGenerationMode = "SURFACE"
-	#
-	#
-	# Change how saturated LOD colors are. 
-	# 0 = black and white 
-	# 1 = normal saturation 
-	# 2 = very saturated 
-	#
-	#Range: 0.0 ~ 2.0
-	saturationMultiplier = 1.0
-	#
-	#
-	# This is how many threads are used when generating terrain. 
-	# If you experience stuttering when generating terrain, decrease 
-	# this number. If you want to increase LOD generation speed, 
-	# increase the number. 
-	# The max is the number of processors on your CPU. 
-	#
-	# Requires a restart to take effect. 
-	#
-	#Range: 1 ~ 12
-	numberOfWorldGenerationThreads = 12
-	#
-	#
-	# At what distance should Fog be drawn on the LODs? 
-	# If the fog cuts off ubruptly or you are using Optifine's "fast" 
-	# fog option set this to NEAR or FAR. 
-	#
-	#Allowed Values: NEAR, FAR, NEAR_AND_FAR
-	fogDistance = "NEAR_AND_FAR"
-	#
-	#
-	# What kind of shading should LODs have? 
-	# NONE 
-	# LODs will have the same lighting on every side. 
-	# Can make large similarly colored areas hard to differentiate. 
-	# Fastest/n DARKEN_SIDES 
-	# LODs will have darker sides and bottoms to simulate top down lighting. Fastest /n
-	#Allowed Values: NONE, DARKEN_SIDES
-	lightingMode = "DARKEN_SIDES"
-	#
-	#
-	# If false the LODs will draw with their normal world colors. 
-	# If true they will draw as a black and white checkerboard. 
-	# This can be used for debugging or imagining you are playing a 
-	# giant game of chess ;) 
-	#
-	drawCheckerBoard = false
-	#
-	#
-	# How should the LODs be drawn? 
-	# NOTE: Currently only CUBIC is implemented! 
-	# 
-	# CUBIC: LOD Chunks are drawn as rectangular prisms (boxes). 
-	# TRIANGULAR: LOD Chunks smoothly transition between other. 
-	# DYNAMIC: LOD Chunks smoothly transition between other, 
-	#          unless a neighboring chunk is at a significantly different height. 
-	#
-	#Allowed Values: CUBIC, TRIANGULAR, DYNAMIC
-	lodTemplate = "TRIANGULAR"
-	#
-	#
-	# When using the FEATURES generation mode 
-	# some features may not be thread safe, which could 
-	# cause instability and crashes. 
-	# By default (false) those features are skipped, 
-	# improving stability, but decreasing how many features are 
-	# actually generated. 
-	# (for example: some tree generation is unstable, 
-	#               so some trees may not be generated.) 
-	# By setting this to true, all features will be generated, 
-	# but your game will be more unstable and crashes may occur. 
-	# 
-	# I would love to remove this option and always generate everything, 
-	# but I'm not sure how to do that. 
-	# If you are a Java wizard, check out the git issue here: 
-	# https://gitlab.com/jeseibel/minecraft-lod-mod/-/issues/35 
-	#
-	allowUnstableFeatureGeneration = true
+
+	#These settings control how the LODs look.
+	[client.Graphics]
+		#
+		#
+		# Change how bright LOD colors are. 
+		# 0 = black 
+		# 1 = normal color value 
+		# 2 = washed out colors 
+		#
+		#Range: 0.0 ~ 2.0
+		brightnessMultiplier = 1.0
+		#
+		#
+		# If false LODs will not be drawn, 
+		# however they will still be generated 
+		# and saved to file for later use. 
+		#
+		drawLODs = true
+		#
+		#
+		# When should fog be drawn? 
+		# USE_OPTIFINE_FOG_SETTING: Use whatever Fog setting Optifine is using. If Optifine isn't installed this defaults to ALWAYS_DRAW_FOG_FANCY. 
+		# NEVER_DRAW_FOG: Never draw fog on the LODs 
+		# ALWAYS_DRAW_FOG_FAST: Always draw fast fog on the LODs 
+		# ALWAYS_DRAW_FOG_FANCY: Always draw fancy fog on the LODs (if your graphics card supports it) 
+		#
+		#Allowed Values: USE_OPTIFINE_FOG_SETTING, NEVER_DRAW_FOG, ALWAYS_DRAW_FOG_FAST, ALWAYS_DRAW_FOG_FANCY
+		fogDrawOverride = "USE_OPTIFINE_FOG_SETTING"
+		#
+		#
+		# What is the maximum detail level that LODs should be drawn at? 
+		# SINGLE: render 1 LOD for each Chunk. 
+		# DOUBLE: render 4 LODs for each Chunk. 
+		# QUAD: render 16 LODs for each Chunk. 
+		# HALF: render 64 LODs for each Chunk. 
+		# FULL: render 256 LODs for each Chunk. 
+		#
+		#Allowed Values: SINGLE, DOUBLE, QUAD, HALF, FULL
+		lodDrawQuality = "FULL"
+		#
+		#
+		# At what distance should Fog be drawn on the LODs? 
+		# If the fog cuts off ubruptly or you are using Optifine's "fast" fog option 
+		# set this to NEAR or FAR. 
+		#
+		#Allowed Values: NEAR, FAR, NEAR_AND_FAR
+		fogDistance = "NEAR_AND_FAR"
+		#
+		#
+		# this value is multiplied by 128 and determine 
+		# how much the quality decrease over distance 
+		#
+		#Range: 1 ~ 4
+		lodQuality = 1
+		#
+		#
+		# Change how saturated LOD colors are. 
+		# 0 = black and white 
+		# 1 = normal saturation 
+		# 2 = very saturated 
+		#
+		#Range: 0.0 ~ 2.0
+		saturationMultiplier = 1.0
+		#
+		#
+		# What kind of shading should the LODs have? 
+		# 
+		# NONE 
+		# LODs will have the same lighting on every side. 
+		# Can make large similarly colored areas hard to differentiate. 
+		#
+		# DARKEN_SIDES 
+		# LODs will have darker sides and bottoms to simulate Minecraft's flat lighting.
+		#Allowed Values: NONE, DARKEN_SIDES
+		lightingMode = "DARKEN_SIDES"
+		#
+		#
+		# How should the LODs be drawn? 
+		# NOTE: Currently only CUBIC is implemented! 
+		# 
+		# CUBIC: LOD Chunks are drawn as rectangular prisms (boxes). 
+		# TRIANGULAR: LOD Chunks smoothly transition between other. 
+		# DYNAMIC: LOD Chunks smoothly transition between other, 
+		#          unless a neighboring chunk is at a significantly different height. 
+		#
+		#Allowed Values: CUBIC, TRIANGULAR, DYNAMIC
+		lodTemplate = "CUBIC"
+		#
+		#
+		# This is the render distance of the mod 
+		#
+		#Range: 32 ~ 512
+		lodChunkRenderDistane = 64
+
+	#These settings control how LODs outside your normal view range are generated.
+	[client.WorldGenerator]
+		#
+		#
+		# What is the maximum detail level that LODs should be generated at? 
+		# SINGLE: render 1 LOD for each Chunk. 
+		# DOUBLE: render 4 LODs for each Chunk. 
+		# QUAD: render 16 LODs for each Chunk. 
+		# HALF: render 64 LODs for each Chunk. 
+		# FULL: render 256 LODs for each Chunk. 
+		#
+		#Allowed Values: SINGLE, DOUBLE, QUAD, HALF, FULL
+		lodGenerationQuality = "HALF"
+		#
+		#
+		# LINEAR 
+		# with LINEAR calculator the quality of block decrease 
+		# linearly to the distance of the player 
+		#
+		# QUADRATIC 
+		# with LINEAR calculator the quality of block decrease 
+		# quadratically to the distance of the player 
+		#
+		# RENDER_DEPENDANT 
+		# with LINEAR calculator the quality of block decrease 
+		# quadratically to the distance of the player 
+		#
+		#Allowed Values: LINEAR, QUADRATIC, RENDER_DEPENDANT
+		lodDistanceComputation = "LINEAR"
+		#
+		#
+		# Note: The times listed here are the amount of time it took 
+		#       the developer's PC to generate 1 chunk, 
+		#       and are included so you can compare the 
+		#       different generation options. Your mileage may vary. 
+		#
+		# NONE 
+		# Don't run the distance generator. 
+		# BIOME_ONLY 
+		# Only generate the biomes and use biome 
+		# grass/foliage color, water color, or snow color 
+		# to generate the color. 
+		# Doesn't generate height, everything is shown at sea level. 
+		# Multithreaded - Fastest (2-5 ms) 
+		#
+		# BIOME_ONLY_SIMULATE_HEIGHT 
+		# Same as BIOME_ONLY, except instead 
+		# of always using sea level as the LOD height 
+		# different biome types (mountain, ocean, forest, etc.) 
+		# use predetermined heights to simulate having height data. 
+		# Multithreaded - Fastest (2-5 ms) 
+		#
+		# SURFACE 
+		# Generate the world surface, 
+		# this does NOT include caves, trees, 
+		# or structures. 
+		# Multithreaded - Faster (10-20 ms) 
+		#
+		# FEATURES 
+		# Generate everything except structures. 
+		# WARNING: This may cause world generation bugs or instability! 
+		# Multithreaded - Fast (15-20 ms) 
+		#
+		# SERVER 
+		# Ask the server to generate/load each chunk. 
+		# This is the most compatible, but causes server/simulation lag. 
+		# This will also show player made structures if you 
+		# are adding the mod to a pre-existing world. 
+		# Singlethreaded - Slow (15-50 ms, with spikes up to 200 ms) 
+		#
+		#Allowed Values: NONE, BIOME_ONLY, BIOME_ONLY_SIMULATE_HEIGHT, SURFACE, FEATURES, SERVER
+		distanceGenerationMode = "SURFACE"
+		#
+		#
+		# When using the FEATURES generation mode 
+		# some features may not be thread safe, which could 
+		# cause instability and crashes. 
+		# By default (false) those features are skipped, 
+		# improving stability, but decreasing how many features are 
+		# actually generated. 
+		# (for example: some tree generation is unstable, 
+		#               so some trees may not be generated.) 
+		# By setting this to true, all features will be generated, 
+		# but your game will be more unstable and crashes may occur. 
+		# 
+		# I would love to remove this option and always generate everything, 
+		# but I'm not sure how to do that. 
+		# If you are a Java wizard, check out the git issue here: 
+		# https://gitlab.com/jeseibel/minecraft-lod-mod/-/issues/35 
+		#
+		allowUnstableFeatureGeneration = false
+
+	#These settings can be used by to look for bugs, or see how certain parts of the mod are working.
+	[client.Debugging]
+		#
+		#
+		# If true the F4 key can be used to cycle through the different debug modes. 
+		#
+		enableDebugKeybinding = false
+		#
+		#
+		# OFF: LODs will draw with their normal colors. 
+		# SHOW_DETAIL: LOD colors will be based on their detail. 
+		# SHOW_DETAIL_WIREFRAME: LOD colors will be based on their detail, drawn with wireframe. 
+		#
+		#Allowed Values: OFF, SHOW_DETAIL, SHOW_DETAIL_WIREFRAME
+		debugMode = "OFF"
+
+	#These settings control how many CPU threads the mod uses for different tasks.
+	[client.Threading]
+		#
+		#
+		# This is how many threads are used when building vertex buffers 
+		# (The things sent to your GPU to draw the LODs). 
+		# If you experience high CPU useage when NOT generating distant 
+		# LODs, lower this number. 
+		# 
+		# The maximum value is the number of processors on your CPU. 
+		# Requires a restart to take effect. 
+		#
+		#Range: 1 ~ 12
+		numberOfBufferBuilderThreads = 12
+		#
+		#
+		# This is how many threads are used when generating LODs outside 
+		# the normal render distance. 
+		# If you experience stuttering when generating distant LODs, decrease 
+		# this number. If you want to increase LOD generation speed, 
+		# increase this number. 
+		# 
+		# The maximum value is the number of processors on your CPU. 
+		# Requires a restart to take effect. 
+		#
+		#Range: 1 ~ 12
+		numberOfWorldGenerationThreads = 6
+
+	#These settings affect when Vertex Buffers are built.
+	[client.Buffers]
+		#
+		#
+		# How long in milliseconds should we wait to 
+		# rebuild the vertex buffers when the LOD regions change? 
+		#
+		#Range: 1 ~ 60000
+		bufferRebuildLodChangeTimeout = 5000
+		#
+		#
+		# How long in milliseconds should we wait to 
+		# rebuild the vertex buffers when the vanilla rendered 
+		# chunks change? 
+		#
+		#Range: 1 ~ 60000
+		bufferRebuildChunkChangeTimeout = 1000
+		#
+		#
+		# How long in milliseconds should we wait to 
+		# rebuild the vertex buffers when the player moves 
+		# a chunk or more? 
+		#
+		#Range: 1 ~ 60000
+		bufferRebuildPlayerMoveTimeout = 2000
 

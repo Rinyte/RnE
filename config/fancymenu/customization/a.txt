@@ -1,0 +1,145 @@
+type = menu
+
+customization-meta {
+  identifier = net.minecraft.client.gui.screen.MainMenuScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  identifier = %id=604346%
+  orientation = mid-right
+  x = -23
+  action = movebutton
+  y = -24
+}
+
+customization {
+  identifier = %id=376322%
+  orientation = mid-right
+  x = -23
+  action = movebutton
+  y = 20
+}
+
+customization {
+  identifier = %id=376382%
+  orientation = mid-right
+  x = -23
+  action = movebutton
+  y = 42
+}
+
+customization {
+  identifier = %id=376346%
+  orientation = mid-right
+  x = -23
+  action = movebutton
+  y = -2
+}
+
+customization {
+  identifier = %id=400322%
+  orientation = mid-left
+  x = 3
+  action = movebutton
+  y = -24
+}
+
+customization {
+  identifier = %id=400322%
+  width = 98
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=604382%
+  orientation = mid-right
+  x = -23
+  action = movebutton
+  y = -46
+}
+
+customization {
+  identifier = %id=400382%
+  orientation = mid-left
+  x = 3
+  action = movebutton
+  y = 20
+}
+
+customization {
+  identifier = %id=502382%
+  orientation = mid-left
+  x = 3
+  action = movebutton
+  y = 42
+}
+
+customization {
+  identifier = %id=400298%
+  orientation = mid-left
+  x = 3
+  action = movebutton
+  y = -46
+}
+
+customization {
+  identifier = %id=400298%
+  width = 98
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=400346%
+  orientation = mid-left
+  x = 3
+  action = movebutton
+  y = -2
+}
+
+customization {
+  identifier = %id=502346%
+  action = hidebutton
+}
+
+customization {
+  path = config/fancymenu/resources/rne.png
+  orientation = mid-centered
+  x = -82
+  width = 165
+  action = addtexture
+  actionid = bb25b10b-1ddf-45c6-9c53-f648665b255b1631246897321
+  y = -22
+  height = 45
+}
+
+customization {
+  orientation = bottom-centered
+  shadow = false
+  x = 0
+  action = addtext
+  actionid = b00aa848-7be5-4497-b460-99fbe66d89fb1631247732966
+  y = -42
+  scale = 1.0
+  alignment = centered
+  value = Version: 1.0.0
+}
+
+customization {
+  orientation = bottom-centered
+  shadow = false
+  multiline = false
+  x = 0
+  action = addwebtext
+  actionid = 1f69626c-79b7-40d0-af6a-5855fc5158b41631247868126
+  y = -32
+  scale = 1.0
+  alignment = centered
+  url = https://github.com/Rinyte/RnE/blob/main/version.txt
+}
+

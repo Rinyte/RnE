@@ -13,7 +13,7 @@
 	[Base.Targeting]
 		#Chance for a mob to be able to see players through blocks.
 		#Range: 0.0 ~ 1.0
-		"XRay Chance" = 1.0
+		"XRay Chance" = 0.65
 		#Mobs will no longer take random time to target a player.
 		"Instant Target" = true
 		#How far away can the mobs see the player. This overrides the vanilla value (16 for most mobs). Setting to 0 will leave the follow range as vanilla.
@@ -34,10 +34,10 @@
 	[Creeper."Creeper Swell"]
 		#Percentage chance for a Creeper to not stand still while exploding.
 		#Range: 0.0 ~ 1.0
-		"Walking Fuse Chance" = 1.0
+		"Walking Fuse Chance" = 0.5
 		#Breaching creepers will try to open an hole in the wall to let mobs in.
 		#Range: 0.0 ~ 1.0
-		"Breach Chance" = 1.0
+		"Breach Chance" = 0.655
 		#If true creepers will ignite if damaged by an explosion.
 		"TNT Like" = true
 		#AND HIS NAME IS ...
@@ -48,7 +48,7 @@
 		"Ignore Walls Chance" = 1.0
 		#Launching creepers will try ignite and throw themselves at the player.
 		#Range: 0.0 ~ 1.0
-		"Launch Chance" = 1.0
+		"Launch Chance" = 0.35
 
 [Skeleton]
 	#Skeletons are more precise when shooting and strafing is removed, can hit a target from 64 blocks and try to stay away from the target.
@@ -58,7 +58,7 @@
 	[Skeleton."Skeleton Shoot"]
 		#How much inaccuracy does the arrow fired by skeletons have. Vanilla skeletons have 10/6/2 inaccuracy in easy/normal/hard difficulty.
 		#Range: 0.0 ~ 30.0
-		"Arrow Inaccuracy" = 0.0
+		"Arrow Inaccuracy" = 1.5
 		#Chance for a Skeleton to spawn with the ability to avoid the player
 		#Range: 0.0 ~ 1.0
 		"Avoid Player chance" = 1.0
@@ -73,7 +73,7 @@
 		"Digger Speed Multiplier" = 1.0
 		#Chance for a Zombie to spawn with the digger ability
 		#Range: 0.0 ~ 1.0
-		"Digger Chance" = 0.05
+		"Digger Chance" = 0.4
 		#Zombies with Digger AI will not be able to break tile entities
 		"Blacklist Tile Entities" = false
 		#Zombies with Digger AI will mine only if their off-hand tool can mine targeted blocks (e.g. zombies with shovels will not mine stone). Blocks that require no tool (e.g. planks) will be minable.

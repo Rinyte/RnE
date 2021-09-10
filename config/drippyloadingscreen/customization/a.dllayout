@@ -1,0 +1,47 @@
+type = hud
+
+customization-meta {
+  renderorder = foreground
+  backgroundcolor = 000000
+}
+
+customization {
+  orientation = bottom-right
+  x = -2
+  action = editlogo
+  y = -27
+}
+
+customization {
+  orientation = bottom-right
+  x = -3
+  action = editforgememoryinfo
+  y = -13
+}
+
+customization {
+  x = 10
+  textcolor = FFFFFF
+  action = editforgestatustext
+  y = -10
+  scale = 0.5
+}
+
+customization {
+  orientation = bottom-right
+  x = -2
+  action = editprogressbar
+  y = -1
+}
+
+customization {
+  path = config/drippyloadingscreen/resources/rne.png
+  orientation = bottom-right
+  x = -2
+  width = 105
+  action = addtexture
+  actionid = b07cf3ce-aed8-484c-951f-9fbfedbf67861631247384300
+  y = -112
+  height = 32
+}
+
